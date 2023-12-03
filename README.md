@@ -7,3 +7,4 @@ are added to the list so if no new posts are retrieved the list will not change.
 -Added an image when there are no posts to display.
 -A single fab button to save post remote and local.
 -Posts and comments are saved on the device every time they are retrieved so they can be shown when there is no connection
+-Most changes are in develop branch
