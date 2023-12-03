@@ -8,5 +8,7 @@
     <string name="placeholder_body">Body</string>
     <string name="last_updated_placeholder">last updated: 2020–01–01</string>
     <string name="last_updated">last updated: </string>
+    <string name="empty_list_image">empty list image</string>
+    <string name="looks_like_there_are_no_posts_to_display_right_now">Looks like there are no posts to display right now…</string>
 
 </resources>
