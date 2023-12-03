@@ -22,3 +22,5 @@ are added to the list so if no new posts are retrieved the list will not change.
 -Repository implementation to separate network request logic from other classes
 
 -MMVM to handle view logic from data logic
+
+-When making requests after receiving response 200, the application checks for nulls or empty data before submitting it
