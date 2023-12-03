@@ -1,7 +1,6 @@
 package com.example.postsapplication.framework.db
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -17,6 +16,12 @@ interface PostDao {
     @Query("SELECT * FROM post")
     suspend fun getAllPostEntities(): List<PostEntity>
 
-    @Delete
-    suspend fun deletePostEntity(postEntity: PostEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPostEntities(posts: List<PostEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCommentEntities(posts: List<CommentEntity>)
+
+    @Query("SELECT * FROM comment WHERE postId = :postId")
+    suspend fun getCommentPostEntities(postId: Int): List<CommentEntity>
 }

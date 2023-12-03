@@ -1,23 +1,27 @@
 package com.example.postsapplication.framework.di
 
-import com.example.postsapplication.framework.UseCases
+import com.example.core.UseCases
 import dagger.Module
 import dagger.Provides
-import repository.PostRepository
+import repository.LocalPostRepository
 import usecase.AddPost
-import usecase.GetAllPost
+import usecase.GetComments
+import usecase.GetPosts
 import usecase.GetPost
-import usecase.RemovePost
+import usecase.InsertComments
+import usecase.InsertPosts
 
 @Module
 class UseCasesModule {
     @Provides
     fun getUseCases(
-        repository: PostRepository
+        repository: LocalPostRepository
     ) = UseCases(
         AddPost(repository),
-        GetAllPost(repository),
+        GetPosts(repository),
         GetPost(repository),
-        RemovePost(repository)
+        InsertPosts(repository),
+        InsertComments(repository),
+        GetComments(repository)
     )
 }

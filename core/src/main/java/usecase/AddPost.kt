@@ -1,8 +1,8 @@
 package usecase
 
 import data.Post
-import repository.PostRepository
+import repository.LocalPostRepository
 
-class AddPost(private val postRepository: PostRepository) {
-    suspend operator fun invoke(post: Post) = postRepository.addPost(post)
+class AddPost(private val localPostRepository: LocalPostRepository) {
+    suspend operator fun invoke(post: Post) = localPostRepository.addPost(post)
 }

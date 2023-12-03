@@ -11,9 +11,8 @@ data class PostEntity(
     val id: Int = 0,
     val title: String,
     val body: String,
-    val creationTime: Long,
     val updateTime: Long,
-    val isUploaded: Boolean = false
+    val isCreatedLocal: Boolean
 ) {
     companion object {
         fun fromPost(post: Post) =
@@ -22,9 +21,8 @@ data class PostEntity(
                 id = post.id,
                 title = post.title,
                 body = post.body,
-                creationTime = post.creationTime,
                 updateTime = post.updateTime,
-                isUploaded = post.isUploaded
+                isCreatedLocal = post.isCreatedLocal
             )
     }
 
@@ -33,8 +31,7 @@ data class PostEntity(
         id,
         title,
         body,
-        creationTime,
         updateTime,
-        isUploaded
+        isCreatedLocal
     )
 }
